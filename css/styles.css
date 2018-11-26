@@ -1,10 +1,11 @@
 body{
   font-family: 'Open Sans', sans-serif;
-  background: lightpink;
+  background: #444;
+  color: #fff;
 }
 
 a{
-  color: #000;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
 }
