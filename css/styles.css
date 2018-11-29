@@ -1,7 +1,40 @@
-body{
+html, body{
+  height: 100%;
+}
+
+.site{
   font-family: 'Open Sans', sans-serif;
-  background: #444;
+  font-size: 14px;
   color: #fff;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-areas:
+    'hero hero hero hero'
+    'time-icon time time time'
+    'news news news news-icon'
+    'song-icon int int int'
+    'movie movie movie movie-icon'
+    'source source source source';
+/* The image used */
+ background-image: url("../img/joanne.jpg");
+
+ /* Full height */
+ height: 100%;
+
+ /* Create the parallax scrolling effect */
+ background-attachment: fixed;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 a{
@@ -12,4 +45,143 @@ a{
 
 a:hover{
   text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Poiret One', cursive;
+  text-transform: uppercase;
+}
+
+h1{
+  letter-spacing: 3px;
+  font-size: 4em;
+}
+
+.time-icon, .news-icon, .song-icon, .movie-icon{
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 5em;
+}
+
+
+
+.hero{
+  grid-area: hero;
+  height: 760px;
+  text-align: center;
+}
+
+/*timeline*/
+.timeline{
+  grid-area: time;
+  height: 500px;
+  background-color: #ef8291;
+}
+
+.time-icon{
+  grid-area: time-icon;
+}
+
+
+/*News API portion*/
+.news{
+  grid-area: news;
+  background-color: #332c2d;
+}
+
+.news-icon{
+  grid-area: news-icon;
+}
+
+.news h1{
+  text-align: center;
+}
+
+.latest-news{
+  justify-content: flex-start;
+  border: 1px solid #ddd;
+  padding: 5px;
+  margin: 10px;
+  box-shadow: 2px 2px 5px #ccc;
+}
+
+.thumbnail{
+  max-width: 15%;
+  height: auto;
+  flex-basis: 15%;
+  margin-right: 10px;
+}
+
+.text{
+  flex-basis: 85%;
+}
+
+/*Spotify playlist portion*/
+.interactive{
+  grid-area: int;
+  height: auto;
+  background-color: #d38eff;
+}
+
+.spotify-player{
+  background-color: #333;
+  text-align: center;
+  padding: 5px;
+  margin: 10px;
+}
+
+.song-icon{
+  grid-area: song-icon;
+}
+
+/*OMDB API styling*/
+.movies{
+  grid-area: movie;
+  height: auto;
+  background-color: #8d37a2;
+  flex-direction: column;
+}
+
+.movie-icon{
+  grid-area: movie-icon;
+}
+
+.posters{
+  background-color: #aaa;
+  margin: 10px;
+  padding: 10px;
+}
+
+.poster-img{
+  max-width: 50%;
+  height: auto;
+  flex-basis: 50%;
+}
+
+.sources{
+  grid-area: source;
+  height: 200px;
+}
+
+@media only screen and (max-width: 767px) {
+  .site{
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(10, auto);
+    grid-template-areas:
+      'hero'
+      'time-icon'
+      'time'
+      'news-icon'
+      'news'
+      'song-icon'
+      'int'
+      'movie-icon'
+      'movie'
+      'source';
+  }
+
+  .hero{
+    height: 100%;
+  }
+
 }
