@@ -9,13 +9,14 @@ html, body{
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-rows: repeat(7, auto);
   grid-template-areas:
     'hero hero hero hero'
     'time-icon time time time'
     'news news news news-icon'
     'song-icon int int int'
     'movie movie movie movie-icon'
+    'video-icon video video video'
     'source source source source';
 /* The image used */
  background-image: url("../img/joanne.jpg");
@@ -57,7 +58,7 @@ h1{
   font-size: 4em;
 }
 
-.time-icon, .news-icon, .song-icon, .movie-icon{
+.time-icon, .news-icon, .song-icon, .movie-icon, .video-icon{
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
   font-size: 5em;
@@ -139,7 +140,11 @@ h1{
   grid-area: movie;
   height: auto;
   background-color: #8d37a2;
-  flex-direction: column;
+}
+
+.movies h2{
+  flex-basis: 100%;
+  text-align: center;
 }
 
 .movie-icon{
@@ -147,15 +152,28 @@ h1{
 }
 
 .posters{
-  background-color: #aaa;
-  margin: 10px;
-  padding: 10px;
+  margin: 1% 4%;
 }
 
 .poster-img{
-  max-width: 50%;
+  max-width: 90%;
   height: auto;
-  flex-basis: 50%;
+  flex-basis: 90%;
+}
+
+/*videos*/
+.videos{
+  grid-area: video;
+  height:100%;
+  background-color: #4938d3;
+}
+
+.video-icon{
+  grid-area: video-icon;
+}
+
+.video-players{
+  margin: 3% 0;
 }
 
 .sources{
@@ -166,7 +184,7 @@ h1{
 @media only screen and (max-width: 767px) {
   .site{
     grid-template-columns: 100%;
-    grid-template-rows: repeat(10, auto);
+    grid-template-rows: repeat(11, auto);
     grid-template-areas:
       'hero'
       'time-icon'
@@ -177,6 +195,8 @@ h1{
       'int'
       'movie-icon'
       'movie'
+      'video-icon'
+      'video'
       'source';
   }
 
