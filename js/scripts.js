@@ -20,6 +20,11 @@
 $(function(){
   console.log('scripts loaded');
 
+  //initializing card flip
+  $('.card').click(function(){
+    $(this).toggleClass('flipped');
+  });
+
   //First AJAX using OMBD
   var myOMBDKey = config.MY_OMDBKEY;
   var moviesHtml = '';
@@ -56,8 +61,8 @@ $(function(){
   });//end of AJAX request
 
   var myNewsKey = config.MY_NEWSKEY;
-  var newsUrl = 'https://newsapi.org/v2/everything?q=A+Star+is+Born&sortBy=publishedAt&apiKey=' + myNewsKey;
-  var newsUrl2 = 'https://newsapi.org/v2/everything?q=Lady+Gaga&sortBy=publishedAt&apiKey=' + myNewsKey;
+  var newsUrl = 'https://newsapi.org/v2/everything?q=A+Star+is+Born&sortBy=relevancy&pageSize=5&apiKey=' + myNewsKey;
+  var newsUrl2 = 'https://newsapi.org/v2/everything?q=Lady+Gaga&sortBy=relevancy&pageSize=5&apiKey=' + myNewsKey;
   var urlArray = [newsUrl, newsUrl2];
   var newsData = [];
   var newsHtml = '';

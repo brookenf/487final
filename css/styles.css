@@ -48,7 +48,7 @@ a:hover{
   text-decoration: underline;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2{
   font-family: 'Poiret One', cursive;
   text-transform: uppercase;
 }
@@ -56,6 +56,10 @@ h1, h2, h3, h4, h5, h6{
 h1{
   letter-spacing: 3px;
   font-size: 4em;
+}
+
+p{
+  font-family: 'Open Sans', sans-serif;
 }
 
 .time-icon, .news-icon, .song-icon, .movie-icon, .video-icon{
@@ -101,20 +105,20 @@ h1{
 .latest-news{
   justify-content: flex-start;
   border: 1px solid #ddd;
-  padding: 5px;
+  padding: 10px;
   margin: 10px;
   box-shadow: 2px 2px 5px #ccc;
 }
 
 .thumbnail{
-  max-width: 15%;
+  max-width: 20%;
   height: auto;
-  flex-basis: 15%;
+  flex-basis: 20%;
   margin-right: 10px;
 }
 
 .text{
-  flex-basis: 85%;
+  flex-basis: 80%;
 }
 
 /*Spotify playlist portion*/
@@ -133,6 +137,113 @@ h1{
 
 .song-icon{
   grid-area: song-icon;
+}
+
+/*styling the cards*/
+.cards1, .cards2{
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 2% 0;
+}
+
+.card{
+  color: #fff;
+  width: 350px;
+  height: 350px;
+  margin-right: 10px;
+  border-radius: 5px;
+  /* Set the transition effects */
+  -webkit-transition: -webkit-transform 0.4s;
+  -moz-transition: -moz-transform 0.4s;
+  -o-transition: -o-transform 0.4s;
+  transition: transform 0.4s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card h3{
+  font-family: 'Poiret One', cursive;
+  font-size: 1.4em;
+  margin-bottom: 1%;
+  text-align: center;
+}
+
+.card p{
+  line-height: 1em;
+}
+
+.card.flipped {
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+.card .front,
+.card .back {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1em;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card .back{
+  background: #333;
+  position: absolute;
+  border-radius: 5px;
+  z-index: 3;
+  top: 0;
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  font-size: 16px;
+  line-height: 1.1em;
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+/*adding in front bg img*/
+#card1, #card2, #card3, #card4, #card5, #card6{
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+}
+
+#card1{
+  background-image: url(../img/star-cd.png);
+}
+
+#card2{
+  background-image: url(../img/joanne1.png);
+}
+
+#card3{
+  background-image: url(../img/artpop.png);
+}
+
+#card4{
+  background-image: url(../img/born.png);
+}
+
+#card5{
+  background-image: url(../img/monster.png);
+}
+
+#card6{
+  background-image: url(../img/fame.png);
 }
 
 /*OMDB API styling*/
