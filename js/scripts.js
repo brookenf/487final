@@ -7,18 +7,309 @@
 
   // Replace the 'ytplayer' element with an <iframe> and
   // YouTube player after the API code downloads.
-  var player;
-  function onYouTubePlayerAPIReady() {
-    player = new YT.Player('movie-trailer', {
-      height: '360',
+  var playerInfoList = [{
+    id: 'player1',
+    height: '390',
+    width: '640',
+    videoId: 'nSbzyEJ8X9E'
+  }, {
+      id: 'player2',
+      height: '390',
       width: '640',
-      videoId: 'nSbzyEJ8X9E'
-    });
+      videoId: '2Abk1jAONjw'
+  }, {
+      id: 'player3',
+      height: '390',
+      width: '640',
+      videoId: 'd2smz_1L2_0'
+  }, {
+      id: 'player4',
+      height: '390',
+      width: '640',
+      videoId: 'niqrrmev4mA'
+  }, {
+      id: 'player5',
+      height: '390',
+      width: '640',
+      videoId: 'QeWBS0JBNzQ'
+  }, {
+      id: 'player6',
+      height: '390',
+      width: '640',
+      videoId: 'V6qXX82I-Hs'
+  }, {
+      id: 'player7',
+      height: '390',
+      width: '640',
+      videoId: 'Fg1meK-IgOM'
+  }, {
+      id: 'player8',
+      height: '390',
+      width: '640',
+      videoId: 'en2D_5TzXCA'
+  }, {
+      id: 'player9',
+      height: '390',
+      width: '640',
+      videoId: 'O8VadpIgvbw'
+  }, {
+      id: 'player10',
+      height: '390',
+      width: '640',
+      videoId: 'bo_efYhYU2A'
+  }, {
+      id: 'player11',
+      height: '390',
+      width: '640',
+      videoId: '4ZXmnz2aEzU'
+  }, {
+      id: 'player12',
+      height: '390',
+      width: '640',
+      videoId: '0cO309N22KE'
+  }];
+
+  function onYouTubeIframeAPIReady() {
+      if (typeof playerInfoList === 'undefined') return;
+
+      for (var i = 0; i < playerInfoList.length; i++) {
+          var curplayer = createPlayer(playerInfoList[i]);
+          players[i] = curplayer;
+      }
   }
 
+  var players = new Array();
+
+  function createPlayer(playerInfo) {
+      return new YT.Player(playerInfo.id, {
+          height: playerInfo.height,
+          width: playerInfo.width,
+          videoId: playerInfo.videoId,
+      });
+  }
+
+  // Get the modal
+var modal = document.getElementById('just-dance');
+var modal2 = document.getElementById('paparazzi');
+var modal3 = document.getElementById('alejandro');
+var modal4 = document.getElementById('edge-glory');
+var modal5 = document.getElementById('aura');
+var modal6 = document.getElementById('anything-goes');
+var modal7 = document.getElementById('million-reasons');
+var modal8 = document.getElementById('cure');
+var modal9 = document.getElementById('shallow');
+
+// Get the button that opens the modal
+var btn = document.getElementById("show-vid");
+var btn2 = document.getElementById("show-vid2");
+var btn3 = document.getElementById("show-vid3");
+var btn4 = document.getElementById("show-vid4");
+var btn5 = document.getElementById("show-vid5");
+var btn6 = document.getElementById("show-vid6");
+var btn7 = document.getElementById("show-vid7");
+var btn8 = document.getElementById("show-vid8");
+var btn9 = document.getElementById("show-vid9");
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+btn2.onclick = function() {
+    modal2.style.display = "block";
+}
+btn3.onclick = function() {
+    modal3.style.display = "block";
+}
+btn4.onclick = function() {
+    modal4.style.display = "block";
+}
+btn5.onclick = function() {
+    modal5.style.display = "block";
+}
+btn6.onclick = function() {
+    modal6.style.display = "block";
+}
+btn7.onclick = function() {
+    modal7.style.display = "block";
+}
+btn8.onclick = function() {
+    modal8.style.display = "block";
+}
+btn9.onclick = function() {
+    modal9.style.display = "block";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+window.onclick = function(event2) {
+    if (event2.target == modal2) {
+        modal2.style.display = "none";
+    }
+}
+window.onclick = function(event3) {
+    if (event3.target == modal3) {
+        modal3.style.display = "none";
+    }
+}
+window.onclick = function(event4) {
+    if (event4.target == modal4) {
+        modal4.style.display = "none";
+    }
+}
+window.onclick = function(event5) {
+    if (event5.target == modal5) {
+        modal5.style.display = "none";
+    }
+}
+window.onclick = function(event6) {
+    if (event6.target == modal6) {
+        modal6.style.display = "none";
+    }
+}
+window.onclick = function(event7) {
+    if (event7.target == modal7) {
+        modal7.style.display = "none";
+    }
+}
+window.onclick = function(event8) {
+    if (event8.target == modal8) {
+        modal8.style.display = "none";
+    }
+}
+window.onclick = function(event9) {
+    if (event9.target == modal9) {
+        modal9.style.display = "none";
+    }
+}
 
 $(function(){
   console.log('scripts loaded');
+
+  //Timeline
+  (function() {
+
+    // VARIABLES
+    const timeline = document.querySelector(".timeline ol"),
+      elH = document.querySelectorAll(".timeline li > div"),
+      arrows = document.querySelectorAll(".timeline .arrows .arrow"),
+      arrowPrev = document.querySelector(".timeline .arrows .arrow__prev"),
+      arrowNext = document.querySelector(".timeline .arrows .arrow__next"),
+      firstItem = document.querySelector(".timeline li:first-child"),
+      lastItem = document.querySelector(".timeline li:last-child"),
+      xScrolling = 280,
+      disabledClass = "disabled";
+
+    // START
+    window.addEventListener("load", init);
+
+    function init() {
+      setEqualHeights(elH);
+      animateTl(xScrolling, arrows, timeline);
+      setSwipeFn(timeline, arrowPrev, arrowNext);
+      setKeyboardFn(arrowPrev, arrowNext);
+    }
+
+    // SET EQUAL HEIGHTS
+    function setEqualHeights(el) {
+      let counter = 0;
+      for (let i = 0; i < el.length; i++) {
+        const singleHeight = el[i].offsetHeight;
+
+        if (counter < singleHeight) {
+          counter = singleHeight;
+        }
+      }
+
+      for (let i = 0; i < el.length; i++) {
+        el[i].style.height = `${counter}px`;
+      }
+    }
+
+    // CHECK IF AN ELEMENT IS IN VIEWPORT
+    // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    // SET STATE OF PREV/NEXT ARROWS
+    function setBtnState(el, flag = true) {
+      if (flag) {
+        el.classList.add(disabledClass);
+      } else {
+        if (el.classList.contains(disabledClass)) {
+          el.classList.remove(disabledClass);
+        }
+        el.disabled = false;
+      }
+    }
+
+    // ANIMATE TIMELINE
+    function animateTl(scrolling, el, tl) {
+      let counter = 0;
+      for (let i = 0; i < el.length; i++) {
+        el[i].addEventListener("click", function() {
+          if (!arrowPrev.disabled) {
+            arrowPrev.disabled = true;
+          }
+          if (!arrowNext.disabled) {
+            arrowNext.disabled = true;
+          }
+          const sign = (this.classList.contains("arrow__prev")) ? "" : "-";
+          if (counter === 0) {
+            tl.style.transform = `translateX(-${scrolling}px)`;
+          } else {
+            const tlStyle = getComputedStyle(tl);
+            // add more browser prefixes if needed here
+            const tlTransform = tlStyle.getPropertyValue("-webkit-transform") || tlStyle.getPropertyValue("transform");
+            const values = parseInt(tlTransform.split(",")[4]) + parseInt(`${sign}${scrolling}`);
+            tl.style.transform = `translateX(${values}px)`;
+          }
+
+          setTimeout(() => {
+            isElementInViewport(firstItem) ? setBtnState(arrowPrev) : setBtnState(arrowPrev, false);
+            isElementInViewport(lastItem) ? setBtnState(arrowNext) : setBtnState(arrowNext, false);
+          }, 1100);
+
+          counter++;
+        });
+      }
+    }
+    //
+    // // ADD SWIPE SUPPORT FOR TOUCH DEVICES
+    // function setSwipeFn(tl, prev, next) {
+    //   const hammer = new Hammer(tl);
+    //   hammer.on("swipeleft", () => next.click());
+    //   hammer.on("swiperight", () => prev.click());
+    // }
+
+    // ADD BASIC KEYBOARD FUNCTIONALITY
+    function setKeyboardFn(prev, next) {
+      document.addEventListener("keydown", (e) => {
+        if ((e.which === 37) || (e.which === 39)) {
+          const timelineOfTop = timeline.offsetTop;
+          const y = window.pageYOffset;
+          if (timelineOfTop !== y) {
+            window.scrollTo(0, timelineOfTop);
+          }
+          if (e.which === 37) {
+            prev.click();
+          } else if (e.which === 39) {
+            next.click();
+          }
+        }
+      });
+    }
+
+  })();
 
   //initializing card flip
   $('.card').click(function(){
@@ -39,7 +330,7 @@ $(function(){
     url: omdbUrl,
     success: function(movieData){
       movies = movieData.Search;
-      moviesHtml += '<h2>A Star is Born</h2>';
+      moviesHtml += '<h2>A Star Is Born</h2>';
       movies.sort(function(a,b){
         return a.Year - b.Year
       });
@@ -96,18 +387,4 @@ $(function(){
       }
     });//end of AJAX
   }//end of urlArray for loop
-
-  //second API ajax request
-  // $.ajax({
-  //   type: 'GET',
-  //   dataType: 'json',
-  //   data: songsData,
-  //   url: itunesUrl,
-  //   success: function(songsData){
-  //     console.log(songsData);
-  //   },//end of success
-  //   error: function(msg){
-  //     console.log('Please try again');
-  //   }//end of error
-  // });//end of AJAX request
 });//end of document.ready

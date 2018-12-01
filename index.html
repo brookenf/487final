@@ -31,8 +31,104 @@
   <div class="time-icon flex">
     <i class="far fa-calendar-alt"></i>
   </div>
-  <div class="timeline flex">
-    <h1>Timeline</h1>
+  <div class="timeline-hd flex">
+
+  <!--timeline videos-->
+  <div class="modal flex" id="just-dance">
+    <div id="player2"></div>
+  </div>
+  <div class="modal flex" id="paparazzi">
+    <div id="player3"></div>
+  </div>
+  <div class="modal flex" id="alejandro">
+    <div id="player4"></div>
+  </div>
+  <div class="modal flex" id="edge-glory">
+    <div id="player5"></div>
+  </div>
+  <div class="modal flex" id="aura">
+    <div id="player6"></div>
+  </div>
+  <div class="modal flex" id="anything-goes">
+    <div id="player7"></div>
+  </div>
+  <div class="modal flex" id="million-reasons">
+    <div id="player8"></div>
+  </div>
+  <div class="modal flex" id="cure">
+    <div id="player9"></div>
+  </div>
+  <div class="modal flex" id="shallow">
+    <div id="player10"></div>
+  </div>
+
+
+    <section class="section flex">
+      <div class="container">
+        <h1>A Short History &rarr;</h1>
+      </div>
+    </section>
+
+  <section class="timeline">
+    <ol>
+      <li></li>
+      <li>
+        <div>
+          <time id="show-vid">2008</time> Lady Gaga becomes an overnight worldwide sensation with her song "Just Dance."
+        </div>
+      </li>
+      <li>
+        <div>
+          <time id="show-vid2">2008</time> Lady Gaga's debut album, <em>The Fame</em> is released to rave reviews, but no song garners more attention than "Paparazzi."
+        </div>
+      </li>
+      <li>
+        <div>
+          <time id="show-vid3">2009</time> Gaga comes back stronger with her second album <em>The Fame Monster</em> only a year later. Hits such as "Bad Romance" and "Alejandro" dominate the airwaves.
+        </div>
+      </li>
+      <li>
+        <div>
+          <time id="show-vid4">2011</time> Gaga's third album, <em>Born This Way</em>, releases to massive success and,for many fans and critics, remains her best album.
+        </div>
+      </li>
+      <li>
+        <div>
+          <time id="show-vid5">2013</time> <em>ARTPOP</em> releases and some see this album as the beginning of the fall. Songs from this album are deemed "overwhelming" and "excessive"
+        </div>
+      </li>
+      <li>
+        <div>
+          <time id="show-vid6">2014</time> Lady Gaga and Tony Bennett produce a jazz album together entitled <em>Cheek to Cheek</em>. Even though it is not relatively well-known to fans, it establishes Gaga as a multifaceted artist
+        </div>
+      </li>
+      <li>
+        <div>
+          <time id="show-vid7">2016</time> Gaga returns to form with her self-titled album, <em>Joanne</em>. The album is soulful and country music-inspired, including ballad "A Million Reasons."
+        </div>
+      </li>
+      <li>
+        <div>
+          <time id="show-vid8">2017</time> Gaga headlines music festival Coachella, the first woman to do so in over a decade. Playing it rather safe, she debuts new song, "The Cure," which has a conventional-sounding pop vibe instead of Gaga's usual
+        </div>
+      </li>
+      <li>
+        <div>
+          <time id="show-vid9">2018</time> Gaga stars in the third remake of 1937 film <em>A Star Is Born</em> with Bradley Cooper. The story follows a young woman who falls in love with a singer and becomes a starlet.
+        </div>
+      </li>
+      <li></li>
+    </ol>
+
+    <div class="arrows">
+      <button class="arrow arrow__prev disabled" disabled>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_prev.svg" alt="prev timeline arrow">
+      </button>
+      <button class="arrow arrow__next">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_next.svg" alt="next timeline arrow">
+      </button>
+    </div>
+  </section>
   </div>
 
   <!--news-->
@@ -40,7 +136,7 @@
     <i class="far fa-newspaper"></i>
   </div>
   <div class="news">
-    <h1>News API</h1>
+    <h1>Read the latest about Lady Gaga</h1>
     <div id="results"></div>
   </div>
 
@@ -49,13 +145,13 @@
     <i class="fab fa-itunes-note"></i>
   </div>
   <div class="interactive flex">
-    <div class="activism">
+    <div class="songs">
       <div class="songshd flex">
         <h1>
           Discography
         </h1>
         <p>
-          Click to listen to songs from Gaga's career
+          Click each album to listen to songs from Lady Gaga's career
         </p>
       </div>
       <div class="cards1 flex">
@@ -64,7 +160,7 @@
           <div class="front flex" id="card1"></div>
           <div class="back flex">
             <div class="content">
-              <h3 class="cardTitle">A Star is Born</h3>
+              <h3 class="cardTitle">A Star Is Born</h3>
               <div class="spotify-player">
                 <iframe src="https://open.spotify.com/embed/album/4sLtOBOzn4s3GDUv3c5oJD" width="300" height="280" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
               </div>
@@ -88,7 +184,7 @@
           <div class="front flex" id="card3"></div>
           <div class="back flex">
             <div class="content">
-              <h3 class="cardTitle">Artpop</h3>
+              <h3 class="cardTitle">ARTPOP</h3>
               <div class="spotify-player">
                 <iframe src="https://open.spotify.com/embed/album/705K6lFN9wm3bifelyuQS4" width="300" height="280" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
               </div>
@@ -149,11 +245,22 @@
     <i class="fab fa-youtube"></i>
   </div>
   <div class="videos flex">
-    <div class="video-players" id="movie-trailer"></div>
+    <div class="video-players" id="player1"></div>
   </div>
 
   <!--sources-->
-  <div class="sources flex"></div>
+  <div class="sources flex">
+    <h2>Sources</h2>
+    <a target="_blank" href="https://ew.com/music/lady-gaga-fashion-evolution/"><p>
+      Lady Gaga's fashion evolution, from raw meat to <em>A Star Is Born</em>
+    </p></a>
+    <a target="_blank" href="https://www.teenvogue.com/gallery/lady-gaga-best-beauty-looks"><p>
+      Lady Gaga's Beauty Evolution
+    </p></a>
+    <a target="_blank" href="https://junkee.com/lady-gaga-evolution/167282"><p>
+      Tracing Lady Gaga's Evolution in 11 Tracks, From 'Just Dance' To 'The Cure'
+    </p></a>
+  </div>
 
 
   <!--jQuery-->
