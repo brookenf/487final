@@ -264,7 +264,7 @@
     float: left;
   }
 
-  #show-vid, #show-vid2, #show-vid3, #show-vid4, #show-vid5, #show-vid6, #show-vid7, #show-vid8, #show-vid9{
+  #show-vid, #show-vid2, #show-vid3, #show-vid4, #show-vid5, #show-vid6, #show-vid7, #show-vid8, #show-vid9, #show-vid10{
     font-family: 'Poiret One', cursive;
     font-weight: 700;
     color: darkred;
@@ -287,21 +287,25 @@
 
   .latest-news{
     justify-content: flex-start;
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px;
-    box-shadow: 2px 2px 5px #ccc;
+    padding: 2%;
+    margin: 3%;
+    box-shadow: 2px 2px 5px #333;
+    border-radius: 5px;
   }
 
   .thumbnail{
-    max-width: 20%;
+    max-width: 19%;
     height: auto;
-    flex-basis: 20%;
-    margin-right: 10px;
+    flex-basis: 19%;
+    margin-right: 5px;
   }
 
   .text{
-    flex-basis: 80%;
+    flex-basis: 79%;
+  }
+
+  .text h2{
+    margin: 0;
   }
 
   /*Spotify playlist portion*/
@@ -427,15 +431,15 @@
   }
 
   #card3{
-    background-image: url(../img/artpop.png);
+    background-image: url(../img/cheek.png);
   }
 
   #card4{
-    background-image: url(../img/born.png);
+    background-image: url(../img/artpop.png);
   }
 
   #card5{
-    background-image: url(../img/monster.png);
+    background-image: url(../img/born.png);
   }
 
   #card6{
@@ -488,6 +492,15 @@
 
   .video-icon{
     grid-area: video-icon;
+  }
+
+  .videos-intro{
+    flex-direction: column;
+    max-width: 90%;
+  }
+
+  .yt-videos{
+    flex-direction: column;
   }
 
   .video-players{

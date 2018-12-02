@@ -8,65 +8,65 @@
   // Replace the 'ytplayer' element with an <iframe> and
   // YouTube player after the API code downloads.
   var playerInfoList = [{
-    id: 'player1',
+    id: 'player1',//star is born trailer
     height: '390',
     width: '640',
     videoId: 'nSbzyEJ8X9E'
   }, {
-      id: 'player2',
+      id: 'player2',//just dance
       height: '390',
       width: '640',
       videoId: '2Abk1jAONjw'
   }, {
-      id: 'player3',
+      id: 'player3',//paparazzi
       height: '390',
       width: '640',
       videoId: 'd2smz_1L2_0'
   }, {
-      id: 'player4',
+      id: 'player4',//alejandro
       height: '390',
       width: '640',
       videoId: 'niqrrmev4mA'
   }, {
-      id: 'player5',
+      id: 'player5',//edge of glory
       height: '390',
       width: '640',
       videoId: 'QeWBS0JBNzQ'
   }, {
-      id: 'player6',
+      id: 'player6',//aura
       height: '390',
       width: '640',
       videoId: 'V6qXX82I-Hs'
   }, {
-      id: 'player7',
+      id: 'player7',//anything goes
       height: '390',
       width: '640',
       videoId: 'Fg1meK-IgOM'
   }, {
-      id: 'player8',
+      id: 'player8',//million reasons
       height: '390',
       width: '640',
       videoId: 'en2D_5TzXCA'
   }, {
-      id: 'player9',
+      id: 'player9',//the cure
       height: '390',
       width: '640',
       videoId: 'O8VadpIgvbw'
   }, {
-      id: 'player10',
+      id: 'player10',//shallow
       height: '390',
       width: '640',
       videoId: 'bo_efYhYU2A'
   }, {
-      id: 'player11',
+      id: 'player11',//til it happens to you
       height: '390',
       width: '640',
-      videoId: '4ZXmnz2aEzU'
+      videoId: 'ZmWBrN7QV6Y'
   }, {
-      id: 'player12',
+      id: 'player12',//superbowl video
       height: '390',
       width: '640',
-      videoId: '0cO309N22KE'
+      videoId: 'txXwg712zw4'
   }];
 
   function onYouTubeIframeAPIReady() {
@@ -98,7 +98,7 @@ var modal6 = document.getElementById('anything-goes');
 var modal7 = document.getElementById('million-reasons');
 var modal8 = document.getElementById('cure');
 var modal9 = document.getElementById('shallow');
-
+var modal9 = document.getElementById('ssuperbowl');
 // Get the button that opens the modal
 var btn = document.getElementById("show-vid");
 var btn2 = document.getElementById("show-vid2");
@@ -109,6 +109,7 @@ var btn6 = document.getElementById("show-vid6");
 var btn7 = document.getElementById("show-vid7");
 var btn8 = document.getElementById("show-vid8");
 var btn9 = document.getElementById("show-vid9");
+var btn10 = document.getElementById("show-vid10");
 
 // When the user clicks the button, open the modal
 btn.onclick = function() {
@@ -137,6 +138,9 @@ btn8.onclick = function() {
 }
 btn9.onclick = function() {
     modal9.style.display = "block";
+}
+btn10.onclick = function() {
+    modal10.style.display = "block";
 }
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -182,6 +186,11 @@ window.onclick = function(event8) {
 window.onclick = function(event9) {
     if (event9.target == modal9) {
         modal9.style.display = "none";
+    }
+}
+window.onclick = function(event10) {
+    if (event10.target == modal10) {
+        modal10.style.display = "none";
     }
 }
 
@@ -371,15 +380,15 @@ $(function(){
 
         articles.forEach(function(article){
           console.log(article.title);
+          newsHtml += '<a href="' + article.url + '" target="_blank">';
           newsHtml += '<div class="latest-news flex">';
-            newsHtml += '<a href="' + article.url + '" target="_blank">';
             newsHtml += '<img class="thumbnail" src="' + article.urlToImage + '">';
-            newsHtml += '<div class="text">';
-            newsHtml += '<h2 class="headline">' + article.title + '</h2>';
-            newsHtml += '<h4 class="byline">by ' + article.author + ', <em>' + article.source.name + '</em></h4>';
-            newsHtml += '</a>';
-            newsHtml += '</div>';//text
-          newsHtml += '</div>';//latest-news
+              newsHtml += '<div class="text">';
+                newsHtml += '<h2 class="headline">' + article.title + '</h2>';
+                newsHtml += '<h4 class="byline">by ' + article.author + ', <em>' + article.source.name + '</em></h4>';
+              newsHtml += '</div>';//text
+            newsHtml += '</div>';//latest-news
+          newsHtml += '</a>';
           $('#results').html(newsHtml);
         });
       }
