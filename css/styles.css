@@ -77,6 +77,8 @@
 
   p{
     font-family: 'Open Sans', sans-serif;
+    font-size: 1.3em;
+    text-align: center;
   }
 
   .time-icon, .news-icon, .song-icon, .movie-icon, .video-icon{
@@ -103,7 +105,7 @@
   }
 
   .section {
-    padding: 50px 0;
+    padding: 2% 0;
     height: 100%;
   }
 
@@ -115,6 +117,7 @@
 
   .section h1 {
     font-size: 2.5rem;
+    margin-bottom: 0;
   }
 
   .section h2 {
@@ -149,7 +152,7 @@
   .timeline ol li:last-child {
     width: 280px;
   }
-  
+
   .timeline ol li:not(:first-child) {
     margin-left: 14px;
   }
@@ -262,14 +265,16 @@
   }
 
   #show-vid, #show-vid2, #show-vid3, #show-vid4, #show-vid5, #show-vid6, #show-vid7, #show-vid8, #show-vid9{
-    color: red;
+    font-family: 'Poiret One', cursive;
+    font-weight: 700;
+    color: darkred;
     cursor: pointer;
   }
 
   /*News API portion*/
   .news{
     grid-area: news;
-    background-color: #332c2d;
+    background-color: #E8B1D5;
   }
 
   .news-icon{
@@ -303,7 +308,7 @@
   .interactive{
     grid-area: int;
     height: auto;
-    background-color: #d38eff;
+    background-color: #b784a7;
   }
 
   .spotify-player{
@@ -319,12 +324,17 @@
 
   .songshd{
     flex-direction: column;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
-  .songshd h1, .sources h1{
+  .songshd h1, .sources h1, .movies-intro h1{
     margin-bottom: 0;
   }
 
+  .songshd p{
+    margin-bottom: 1%;
+  }
   /*styling the cards*/
   .cards1, .cards2{
     flex-direction: row;
@@ -435,8 +445,9 @@
   /*OMDB API styling*/
   .movies{
     grid-area: movie;
+    color: #333;
     height: auto;
-    background-color: #8d37a2;
+    background-color: #F7E7CE;
   }
 
   .movies h2{
@@ -448,8 +459,18 @@
     grid-area: movie-icon;
   }
 
+  .movies-intro{
+    max-width: 90%;
+    margin-bottom: 2%;
+  }
+
+  .movies-intro p, .sources p{
+    text-align: left;
+    margin-bottom: 1%;
+  }
+
   .posters{
-    margin: 1% 4%;
+    margin-bottom: 1%;
   }
 
   .poster-img{
@@ -462,7 +483,7 @@
   .videos{
     grid-area: video;
     height:100%;
-    background-color: #4938d3;
+    background-color: lightblue;
   }
 
   .video-icon{
@@ -476,7 +497,13 @@
   .sources{
     grid-area: source;
     flex-direction: column;
-    height: 200px;
+    height: auto;
+    padding: 2%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .sources h2{
+    margin-bottom: 1%;
   }
 
   /*media queries*/

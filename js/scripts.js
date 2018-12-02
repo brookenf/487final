@@ -323,15 +323,19 @@ $(function(){
     url: omdbUrl,
     success: function(movieData){
       movies = movieData.Search;
-      moviesHtml += '<h2>A Star Is Born</h2>';
+      moviesHtml += '<div class="movies-intro flex">';
+        moviesHtml += '<h1>A Star Is Born</h1>';
+        moviesHtml += '<p>The film <em>A Star Is Born</em>  tells the story of an actor down on his luck who discovers a talented woman that eventually becomes his muse. Through his guidance, she reaches stardom even as his own career wanes.</p>';
+        moviesHtml += '<p>The original 1937 film starred Janet Gaynor and Fredric March. It was remade in 1954 as a musical starring Judy Garland and James Mason. In 1976, Barbara Streisand and Kris Kristofferson. The 1976 version introduced us to a singer instead of an actor but followed the same plotline.</p>';
+        moviesHtml += '<p>Bradley Cooper, in the role of director, brought Lady Gaga to star as his leading lady. Devoid of her usual blonde locks, Gaga stars as the unknown singer who is discovered by Cooper and eventually becomes a big star through his help and guidance.</p>';
+      moviesHtml += '</div>';
       movies.sort(function(a,b){
         return a.Year - b.Year
       });
       console.log(movies);
       movies.forEach(function(movie){
         if((movie.Year == '1937' ||movie.Year == '1954' || movie.Year == '1976' || movie.Year == '2018') && movie.Poster != 'N/A'){
-          moviesHtml += '<div class="posters flex">';
-            moviesHtml += '<a target="_blank" href="https://www.imdb.com/title/' + movie.imdbID + '/">';
+            moviesHtml += '<a class="posters flex"target="_blank" href="https://www.imdb.com/title/' + movie.imdbID + '/">';
               moviesHtml += '<img class=poster-img alt="A Star is Born poster" src="'+ movie.Poster + '" />';
             moviesHtml += '</a>';
           moviesHtml += '</div>';
@@ -344,9 +348,10 @@ $(function(){
     }//end of error
   });//end of AJAX request
 
+  //news API
   var myNewsKey = config.MY_NEWSKEY;
-  var newsUrl = 'https://newsapi.org/v2/everything?q=A+Star+is+Born&sortBy=relevancy&pageSize=5&apiKey=' + myNewsKey;
-  var newsUrl2 = 'https://newsapi.org/v2/everything?q=Lady+Gaga&sortBy=relevancy&pageSize=5&apiKey=' + myNewsKey;
+  var newsUrl = 'https://newsapi.org/v2/everything?q=Lady+Gaga&sortBy=relevancy&pageSize=3&apiKey=' + myNewsKey;
+  var newsUrl2 = 'https://newsapi.org/v2/everything?q=A+Star+is+Born&sortBy=relevancy&pageSize=3&apiKey=' + myNewsKey;
   var urlArray = [newsUrl, newsUrl2];
   var newsData = [];
   var newsHtml = '';
