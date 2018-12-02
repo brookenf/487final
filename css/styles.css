@@ -149,10 +149,7 @@
   .timeline ol li:last-child {
     width: 280px;
   }
-  .timeline ol li:first-child {
-    display: none;
-  }
-
+  
   .timeline ol li:not(:first-child) {
     margin-left: 14px;
   }
@@ -194,6 +191,7 @@
   .timeline ol li:nth-child(odd) div {
     top: -16px;
     transform: translateY(-100%);
+    border-radius: 15px 15px 15px 0;
   }
 
   .timeline ol li:nth-child(odd) div::before {
@@ -204,6 +202,7 @@
 
   .timeline ol li:nth-child(even) div {
     top: calc(100% + 16px);
+    border-radius: 0 15px 15px 15px;
   }
 
   .timeline ol li:nth-child(even) div::before {
@@ -339,7 +338,7 @@
     width: 350px;
     height: 350px;
     margin-right: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     /* Set the transition effects */
     -webkit-transition: -webkit-transform 0.4s;
     -moz-transition: -moz-transform 0.4s;
@@ -387,7 +386,7 @@
   .card .back{
     background: #333;
     position: absolute;
-    border-radius: 5px;
+    border-radius: 10px;
     z-index: 3;
     top: 0;
     width: 94%;
@@ -405,7 +404,7 @@
   #card1, #card2, #card3, #card4, #card5, #card6{
     background-position: center;
     background-size: cover;
-    border-radius: 5px;
+    border-radius: 10px;
     background-repeat: no-repeat;
   }
 
