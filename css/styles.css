@@ -264,15 +264,31 @@
     background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
   }
 
-  #player2, #player3, #player4, #player5, #player6, #player7, #player8, #player9, #player10{
-    float: left;
-  }
-
   .show-vid{
     font-family: 'Poiret One', cursive;
     font-weight: 700;
     color: darkred;
     cursor: pointer;
+  }
+
+  .video-wrapper{
+    margin-top: 12%;
+    align-items: flex-start;
+  }
+
+  /* The Close Button */
+  .close {
+    color: #fff;
+    font-size: 3em;
+    font-weight: bold;
+    margin-left: 2%;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #ef8291;
+    cursor: pointer;
+    text-decoration: none;
   }
 
   /*News API portion*/
@@ -312,20 +328,6 @@
 
   .text h2{
     margin: 0;
-  }
-
-
-/* The Close Button */
-  .close {
-    color: #aaaaaa;
-    font-size: 2.3em;
-    font-weight: bold;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
   }
 
   /*Spotify playlist portion*/

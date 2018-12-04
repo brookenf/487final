@@ -4,10 +4,93 @@
   tag.src = "https://www.youtube.com/player_api";
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  var chosenId = '';
-  var modals = document.getElementsByClassName('modal');
-  for (var j = 0; j < modals.length; j++) {
-    console.log(modals[j]);
+  // Replace the 'ytplayer' element with an <iframe> and
+  // YouTube player after the API code downloads.
+  var playerInfoList = [{
+    id: 'player1',//star is born trailer
+    height: '390',
+    width: '640',
+    videoId: 'nSbzyEJ8X9E'
+  }, {
+      id: 'player2',//Just Dance
+      height: '390',
+      width: '640',
+      videoId: '2Abk1jAONjw'
+  }, {
+      id: 'player3',//til it happens to you
+      height: '390',
+      width: '640',
+      videoId: 'ZmWBrN7QV6Y'
+  }, {
+      id: 'player4',//alejandro
+      height: '390',
+      width: '640',
+      videoId: 'niqrrmev4mA'
+  }, {
+      id: 'player5',//edge of glory
+      height: '390',
+      width: '640',
+      videoId: 'QeWBS0JBNzQ'
+  },{
+      id: 'player6',//paparazzi
+      height: '390',
+      width: '640',
+      videoId: 'd2smz_1L2_0'
+  },{
+      id: 'player7',//aura
+      height: '390',
+      width: '640',
+      videoId: 'V6qXX82I-Hs'
+  },{
+      id: 'player8',//anything goes
+      height: '390',
+      width: '640',
+      videoId: 'Fg1meK-IgOM'
+  },{
+      id: 'player9',//million reasons
+      height: '390',
+      width: '640',
+      videoId: 'en2D_5TzXCA'
+  },{
+      id: 'player10',//cure
+      height: '390',
+      width: '640',
+      videoId: 'O8VadpIgvbw'
+  },{
+      id: 'player11',//superbowl
+      height: '390',
+      width: '640',
+      videoId: 'txXwg712zw4'
+  },{
+      id: 'player12',//shallow
+      height: '390',
+      width: '640',
+      videoId: 'bo_efYhYU2A'
+  }];
+
+  function onYouTubeIframeAPIReady() {
+    //Get the chosenId based on the place in the timeline
+      if (typeof playerInfoList === 'undefined') return;
+
+      for (var i = 0; i < playerInfoList.length; i++) {
+          var curplayer = createPlayer(playerInfoList[i]);
+          players[i] = curplayer;
+      }
+  }
+
+  var players = new Array();
+
+  function createPlayer(playerInfo) {
+      return new YT.Player(playerInfo.id, {
+          height: playerInfo.height,
+          width: playerInfo.width,
+          videoId: playerInfo.videoId,
+      });
+  }
+
+$(function(){
+  console.log('scripts loaded');
+  //get the videos
     $('#just-dance').click(function(){
       $('.modal').css('display', 'block');
       $('#player2').show();
@@ -19,6 +102,7 @@
       $('#player9').hide();
       $('#player10').hide();
       $('#player11').hide();
+      $('#player12').hide();
     });
     $('#alejandro').click(function(){
       $('.modal').css('display', 'block');
@@ -31,6 +115,7 @@
       $('#player9').hide();
       $('#player10').hide();
       $('#player11').hide();
+      $('#player12').hide();
     });
     $('#edge-glory').click(function(){
       $('.modal').css('display', 'block');
@@ -136,95 +221,6 @@
       $('#player11').hide();
       $('#player12').show();
     });
-  }//end of modal for loop
-
-  // Replace the 'ytplayer' element with an <iframe> and
-  // YouTube player after the API code downloads.
-  var playerInfoList = [{
-    id: 'player1',//star is born trailer
-    height: '390',
-    width: '640',
-    videoId: 'nSbzyEJ8X9E'
-  }, {
-      id: 'player2',//Just Dance
-      height: '390',
-      width: '640',
-      videoId: '2Abk1jAONjw'
-  }, {
-      id: 'player3',//til it happens to you
-      height: '390',
-      width: '640',
-      videoId: 'ZmWBrN7QV6Y'
-  }, {
-      id: 'player4',//alejandro
-      height: '390',
-      width: '640',
-      videoId: 'niqrrmev4mA'
-  }, {
-      id: 'player5',//edge of glory
-      height: '390',
-      width: '640',
-      videoId: 'QeWBS0JBNzQ'
-  },{
-      id: 'player6',//paparazzi
-      height: '390',
-      width: '640',
-      videoId: 'd2smz_1L2_0'
-  },{
-      id: 'player7',//aura
-      height: '390',
-      width: '640',
-      videoId: 'V6qXX82I-Hs'
-  },{
-      id: 'player8',//anything goes
-      height: '390',
-      width: '640',
-      videoId: 'Fg1meK-IgOM'
-  },{
-      id: 'player9',//million reasons
-      height: '390',
-      width: '640',
-      videoId: 'en2D_5TzXCA'
-  },{
-      id: 'player10',//cure
-      height: '390',
-      width: '640',
-      videoId: 'O8VadpIgvbw'
-  },{
-      id: 'player11',//superbowl
-      height: '390',
-      width: '640',
-      videoId: 'txXwg712zw4'
-  },{
-      id: 'player12',//shallow
-      height: '390',
-      width: '640',
-      videoId: 'bo_efYhYU2A'
-  }];
-
-  function onYouTubeIframeAPIReady() {
-    //Get the chosenId based on the place in the timeline
-      if (typeof playerInfoList === 'undefined') return;
-
-      for (var i = 0; i < playerInfoList.length; i++) {
-          var curplayer = createPlayer(playerInfoList[i]);
-          players[i] = curplayer;
-      }
-  }
-
-  var players = new Array();
-
-  function createPlayer(playerInfo) {
-      return new YT.Player(playerInfo.id, {
-          height: playerInfo.height,
-          width: playerInfo.width,
-          videoId: playerInfo.videoId,
-      });
-  }
-
-$(function(){
-  console.log('scripts loaded');
-
   $('.close').click(function(){
     $('.modal').css('display', 'none');
   });
