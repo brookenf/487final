@@ -9,62 +9,62 @@
   var playerInfoList = [{
     id: 'player1',//star is born trailer
     height: '390',
-    width: '640',
+    width: '65%',
     videoId: 'nSbzyEJ8X9E'
   }, {
       id: 'player2',//Just Dance
       height: '390',
-      width: '640',
+      width: '65%',
       videoId: '2Abk1jAONjw'
   }, {
       id: 'player3',//til it happens to you
       height: '390',
-      width: '640',
+      width: '65%',
       videoId: 'ZmWBrN7QV6Y'
   }, {
       id: 'player4',//alejandro
       height: '390',
-      width: '640',
+      width: '65%',
       videoId: 'niqrrmev4mA'
   }, {
       id: 'player5',//edge of glory
       height: '390',
-      width: '640',
+      width: '65%',
       videoId: 'QeWBS0JBNzQ'
   },{
       id: 'player6',//paparazzi
       height: '390',
-      width: '640',
+      width: '65%',
       videoId: 'd2smz_1L2_0'
   },{
       id: 'player7',//aura
       height: '390',
-      width: '640',
+      width: '65%',
       videoId: 'V6qXX82I-Hs'
   },{
       id: 'player8',//anything goes
       height: '390',
-      width: '640',
+      width: '65%',
       videoId: 'Fg1meK-IgOM'
   },{
       id: 'player9',//million reasons
       height: '390',
-      width: '640',
+      width: '65%',
       videoId: 'en2D_5TzXCA'
   },{
       id: 'player10',//cure
       height: '390',
-      width: '640',
+      width: '65%',
       videoId: 'O8VadpIgvbw'
   },{
       id: 'player11',//superbowl
       height: '390',
-      width: '640',
+      width: '65%',
       videoId: 'txXwg712zw4'
   },{
       id: 'player12',//shallow
       height: '390',
-      width: '640',
+      width: '65%',
       videoId: 'bo_efYhYU2A'
   }];
 

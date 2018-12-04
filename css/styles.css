@@ -358,9 +358,6 @@
     margin-bottom: 0;
   }
 
-  .songshd p{
-    margin-bottom: 1%;
-  }
   /*styling the cards*/
   .cards1, .cards2{
     flex-direction: row;
@@ -374,6 +371,7 @@
     width: 350px;
     height: 350px;
     margin-right: 10px;
+    margin: 0 auto;
     border-radius: 10px;
     /* Set the transition effects */
     -webkit-transition: -webkit-transform 0.4s;
@@ -392,10 +390,6 @@
     font-size: 1.4em;
     margin-bottom: 1%;
     text-align: center;
-  }
-
-  .card p{
-    line-height: 1em;
   }
 
   .card.flipped {
@@ -492,7 +486,6 @@
 
   .movies-intro p, .sources p{
     text-align: left;
-    margin-bottom: 1%;
   }
 
   .posters{
@@ -604,19 +597,54 @@
         'hero'
         'time-icon'
         'time'
-        'news-icon'
-        'news'
         'song-icon'
         'int'
-        'movie-icon'
-        'movie'
         'video-icon'
         'video'
+        'movie-icon'
+        'movie'
+        'news-icon'
+        'news'
         'source';
     }
 
-    .hero{
-      height: 100%;
+    .timeline ol li:nth-child(odd) div,
+    .timeline ol li:nth-child(even) div{
+      border-radius: 15px;
     }
-  }
+
+    .hero{
+      height: 667px;
+    }
+
+    iframe{
+      width: 100% !important;
+      height: 300px !important;
+    }
+
+    h1, .sources p{
+      text-align: center !important;
+    }
+
+    h1{
+      font-size: 3em !important;
+    }
+
+    p{
+      line-height: 1em;
+      margin-bottom: 5%;
+    }
+
+    .text h2{
+      text-align: left;
+    }
+
+    .time-icon, .news-icon, .song-icon, .movie-icon, .video-icon{
+      padding: 7% 0;
+    }
+
+    .spotify-player{
+      margin: 0;
+    }
+  }/*closing of media queries*/
 }/*closing of supports*/
