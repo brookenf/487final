@@ -4,7 +4,50 @@
   tag.src = "https://www.youtube.com/player_api";
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
+  var chosenId = '';
+  $('#just-dance').click(function(){
+    chosenId = '2Abk1jAONjw';
+    $('.modal').css('display', 'block');
+  });
+  $('#paparazzi').click(function(){
+    chosenId = 'd2smz_1L2_0';
+    $('.modal').css('display', 'block');
+  });
+  $('#alejandro').click(function(){
+    chosenId = 'niqrrmev4mA';
+    $('.modal').css('display', 'block');
+  });
+  $('#edge-glory').click(function(){
+    chosenId = 'QeWBS0JBNzQ';
+    $('.modal').css('display', 'block');
+  });
+  $('#aura').click(function(){
+    chosenId = 'V6qXX82I-Hs';
+    $('.modal').css('display', 'block');
+  });
+  $('#anything-goes').click(function(){
+    chosenId = 'Fg1meK-IgOM';
+    $('.modal').css('display', 'block');
+  });
+  $('#million-reasons').click(function(){
+    chosenId = 'en2D_5TzXCA';
+    $('.modal').css('display', 'block');
+  });
+  $('#cure').click(function(){
+    chosenId = 'O8VadpIgvbw';
+    $('.modal').css('display', 'block');
+  });
+  $('#superbowl').click(function(){
+    chosenId = 'txXwg712zw4';
+    $('.modal').css('display', 'block');
+  });
+  $('#shallow').click(function(){
+    chosenId = 'bo_efYhYU2A';
+    $('.modal').css('display', 'block');
+  });
+  $('.close').click(function(){
+    $('.modal').css('display', 'none');
+  });
   // Replace the 'ytplayer' element with an <iframe> and
   // YouTube player after the API code downloads.
   var playerInfoList = [{
@@ -13,15 +56,15 @@
     width: '640',
     videoId: 'nSbzyEJ8X9E'
   }, {
-      id: 'player2',//just dance
+      id: 'player2',//changes based on the user input
       height: '390',
       width: '640',
-      videoId: '2Abk1jAONjw'
+      videoId: chosenId
   }, {
-      id: 'player3',//paparazzi
+      id: 'player3',//til it happens to you
       height: '390',
       width: '640',
-      videoId: 'd2smz_1L2_0'
+      videoId: 'ZmWBrN7QV6Y'
   }, {
       id: 'player4',//alejandro
       height: '390',
@@ -32,41 +75,6 @@
       height: '390',
       width: '640',
       videoId: 'QeWBS0JBNzQ'
-  }, {
-      id: 'player6',//aura
-      height: '390',
-      width: '640',
-      videoId: 'V6qXX82I-Hs'
-  }, {
-      id: 'player7',//anything goes
-      height: '390',
-      width: '640',
-      videoId: 'Fg1meK-IgOM'
-  }, {
-      id: 'player8',//million reasons
-      height: '390',
-      width: '640',
-      videoId: 'en2D_5TzXCA'
-  }, {
-      id: 'player9',//the cure
-      height: '390',
-      width: '640',
-      videoId: 'O8VadpIgvbw'
-  }, {
-      id: 'player10',//shallow
-      height: '390',
-      width: '640',
-      videoId: 'bo_efYhYU2A'
-  }, {
-      id: 'player11',//til it happens to you
-      height: '390',
-      width: '640',
-      videoId: 'ZmWBrN7QV6Y'
-  }, {
-      id: 'player12',//superbowl video
-      height: '390',
-      width: '640',
-      videoId: 'txXwg712zw4'
   }];
 
   function onYouTubeIframeAPIReady() {
@@ -88,114 +96,13 @@
       });
   }
 
-  // Get the modal
-var modal = document.getElementById('just-dance');
-var modal2 = document.getElementById('paparazzi');
-var modal3 = document.getElementById('alejandro');
-var modal4 = document.getElementById('edge-glory');
-var modal5 = document.getElementById('aura');
-var modal6 = document.getElementById('anything-goes');
-var modal7 = document.getElementById('million-reasons');
-var modal8 = document.getElementById('cure');
-var modal9 = document.getElementById('shallow');
-var modal9 = document.getElementById('ssuperbowl');
-// Get the button that opens the modal
-var btn = document.getElementById("show-vid");
-var btn2 = document.getElementById("show-vid2");
-var btn3 = document.getElementById("show-vid3");
-var btn4 = document.getElementById("show-vid4");
-var btn5 = document.getElementById("show-vid5");
-var btn6 = document.getElementById("show-vid6");
-var btn7 = document.getElementById("show-vid7");
-var btn8 = document.getElementById("show-vid8");
-var btn9 = document.getElementById("show-vid9");
-var btn10 = document.getElementById("show-vid10");
+  //getting the videos from the timeline to show up
 
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-btn2.onclick = function() {
-    modal2.style.display = "block";
-}
-btn3.onclick = function() {
-    modal3.style.display = "block";
-}
-btn4.onclick = function() {
-    modal4.style.display = "block";
-}
-btn5.onclick = function() {
-    modal5.style.display = "block";
-}
-btn6.onclick = function() {
-    modal6.style.display = "block";
-}
-btn7.onclick = function() {
-    modal7.style.display = "block";
-}
-btn8.onclick = function() {
-    modal8.style.display = "block";
-}
-btn9.onclick = function() {
-    modal9.style.display = "block";
-}
-btn10.onclick = function() {
-    modal10.style.display = "block";
-}
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-window.onclick = function(event2) {
-    if (event2.target == modal2) {
-        modal2.style.display = "none";
-    }
-}
-window.onclick = function(event3) {
-    if (event3.target == modal3) {
-        modal3.style.display = "none";
-    }
-}
-window.onclick = function(event4) {
-    if (event4.target == modal4) {
-        modal4.style.display = "none";
-    }
-}
-window.onclick = function(event5) {
-    if (event5.target == modal5) {
-        modal5.style.display = "none";
-    }
-}
-window.onclick = function(event6) {
-    if (event6.target == modal6) {
-        modal6.style.display = "none";
-    }
-}
-window.onclick = function(event7) {
-    if (event7.target == modal7) {
-        modal7.style.display = "none";
-    }
-}
-window.onclick = function(event8) {
-    if (event8.target == modal8) {
-        modal8.style.display = "none";
-    }
-}
-window.onclick = function(event9) {
-    if (event9.target == modal9) {
-        modal9.style.display = "none";
-    }
-}
-window.onclick = function(event10) {
-    if (event10.target == modal10) {
-        modal10.style.display = "none";
-    }
-}
 
 $(function(){
   console.log('scripts loaded');
+
+
 
   //Timeline
   (function() {

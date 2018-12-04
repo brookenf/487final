@@ -21,7 +21,7 @@
   .site{
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
-    color: #fff;
+    color: #333;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -91,6 +91,7 @@
     grid-area: hero;
     height: 760px;
     text-align: center;
+    color: #fff;
   }
 
   /*timeline*/
@@ -256,7 +257,6 @@
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
   }
 
@@ -264,7 +264,7 @@
     float: left;
   }
 
-  #show-vid, #show-vid2, #show-vid3, #show-vid4, #show-vid5, #show-vid6, #show-vid7, #show-vid8, #show-vid9, #show-vid10{
+  .show-vid{
     font-family: 'Poiret One', cursive;
     font-weight: 700;
     color: darkred;
@@ -287,6 +287,7 @@
 
   .latest-news{
     justify-content: flex-start;
+    background-color: #fff;
     padding: 2%;
     margin: 3%;
     box-shadow: 2px 2px 5px #333;
@@ -302,10 +303,25 @@
 
   .text{
     flex-basis: 79%;
+    color: #333;
   }
 
   .text h2{
     margin: 0;
+  }
+
+
+/* The Close Button */
+  .close {
+    color: #aaaaaa;
+    font-size: 2.3em;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
   }
 
   /*Spotify playlist portion*/
