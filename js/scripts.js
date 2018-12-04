@@ -5,49 +5,139 @@
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   var chosenId = '';
-  $('#just-dance').click(function(){
-    chosenId = '2Abk1jAONjw';
-    $('.modal').css('display', 'block');
-  });
-  $('#paparazzi').click(function(){
-    chosenId = 'd2smz_1L2_0';
-    $('.modal').css('display', 'block');
-  });
-  $('#alejandro').click(function(){
-    chosenId = 'niqrrmev4mA';
-    $('.modal').css('display', 'block');
-  });
-  $('#edge-glory').click(function(){
-    chosenId = 'QeWBS0JBNzQ';
-    $('.modal').css('display', 'block');
-  });
-  $('#aura').click(function(){
-    chosenId = 'V6qXX82I-Hs';
-    $('.modal').css('display', 'block');
-  });
-  $('#anything-goes').click(function(){
-    chosenId = 'Fg1meK-IgOM';
-    $('.modal').css('display', 'block');
-  });
-  $('#million-reasons').click(function(){
-    chosenId = 'en2D_5TzXCA';
-    $('.modal').css('display', 'block');
-  });
-  $('#cure').click(function(){
-    chosenId = 'O8VadpIgvbw';
-    $('.modal').css('display', 'block');
-  });
-  $('#superbowl').click(function(){
-    chosenId = 'txXwg712zw4';
-    $('.modal').css('display', 'block');
-  });
-  $('#shallow').click(function(){
-    chosenId = 'bo_efYhYU2A';
-    $('.modal').css('display', 'block');
-  });
-  $('.close').click(function(){
-    $('.modal').css('display', 'none');
-  });
+  var modals = document.getElementsByClassName('modal');
+  for (var j = 0; j < modals.length; j++) {
+    console.log(modals[j]);
+    $('#just-dance').click(function(){
+      $('.modal').css('display', 'block');
+      $('#player2').show();
+      $('#player4').hide();
+      $('#player5').hide();
+      $('#player6').hide();
+      $('#player7').hide();
+      $('#player8').hide();
+      $('#player9').hide();
+      $('#player10').hide();
+      $('#player11').hide();
+    });
+    $('#alejandro').click(function(){
+      $('.modal').css('display', 'block');
+      $('#player2').hide();
+      $('#player4').show();
+      $('#player5').hide();
+      $('#player6').hide();
+      $('#player7').hide();
+      $('#player8').hide();
+      $('#player9').hide();
+      $('#player10').hide();
+      $('#player11').hide();
+    });
+    $('#edge-glory').click(function(){
+      $('.modal').css('display', 'block');
+      $('#player2').hide();
+      $('#player4').hide();
+      $('#player5').show();
+      $('#player6').hide();
+      $('#player7').hide();
+      $('#player8').hide();
+      $('#player9').hide();
+      $('#player10').hide();
+      $('#player11').hide();
+      $('#player12').hide();
+    });
+    $('#paparazzi').click(function(){
+      $('.modal').css('display', 'block');
+      $('#player2').hide();
+      $('#player4').hide();
+      $('#player5').hide();
+      $('#player6').show();
+      $('#player7').hide();
+      $('#player8').hide();
+      $('#player9').hide();
+      $('#player10').hide();
+      $('#player11').hide();
+      $('#player12').hide();
+    });
+    $('#aura').click(function(){
+      $('.modal').css('display', 'block');
+      $('#player2').hide();
+      $('#player4').hide();
+      $('#player5').hide();
+      $('#player6').hide();
+      $('#player7').show();
+      $('#player8').hide();
+      $('#player9').hide();
+      $('#player10').hide();
+      $('#player11').hide();
+      $('#player12').hide();
+    });
+    $('#anything-goes').click(function(){
+      $('.modal').css('display', 'block');
+      $('#player2').hide();
+      $('#player4').hide();
+      $('#player5').hide();
+      $('#player6').hide();
+      $('#player7').hide();
+      $('#player8').show();
+      $('#player9').hide();
+      $('#player10').hide();
+      $('#player11').hide();
+      $('#player12').hide();
+    });
+    $('#million-reasons').click(function(){
+      $('.modal').css('display', 'block');
+      $('#player2').hide();
+      $('#player4').hide();
+      $('#player5').hide();
+      $('#player6').hide();
+      $('#player7').hide();
+      $('#player8').hide();
+      $('#player9').show();
+      $('#player10').hide();
+      $('#player11').hide();
+      $('#player12').hide();
+    });
+    $('#cure').click(function(){
+      $('.modal').css('display', 'block');
+      $('#player2').hide();
+      $('#player4').hide();
+      $('#player5').hide();
+      $('#player6').hide();
+      $('#player7').hide();
+      $('#player8').hide();
+      $('#player9').hide();
+      $('#player10').show();
+      $('#player11').hide();
+      $('#player12').hide();
+    });
+    $('#superbowl').click(function(){
+      $('.modal').css('display', 'block');
+      $('#player2').hide();
+      $('#player4').hide();
+      $('#player5').hide();
+      $('#player6').hide();
+      $('#player7').hide();
+      $('#player8').hide();
+      $('#player9').hide();
+      $('#player10').hide();
+      $('#player11').show();
+      $('#player12').hide();
+    });
+    $('#shallow').click(function(){
+      $('.modal').css('display', 'block');
+      $('#player2').hide();
+      $('#player4').hide();
+      $('#player5').hide();
+      $('#player6').hide();
+      $('#player7').hide();
+      $('#player8').hide();
+      $('#player9').hide();
+      $('#player10').hide();
+      $('#player11').hide();
+      $('#player12').show();
+    });
+  }//end of modal for loop
+
   // Replace the 'ytplayer' element with an <iframe> and
   // YouTube player after the API code downloads.
   var playerInfoList = [{
@@ -56,10 +146,10 @@
     width: '640',
     videoId: 'nSbzyEJ8X9E'
   }, {
-      id: 'player2',//changes based on the user input
+      id: 'player2',//Just Dance
       height: '390',
       width: '640',
-      videoId: chosenId
+      videoId: '2Abk1jAONjw'
   }, {
       id: 'player3',//til it happens to you
       height: '390',
@@ -75,9 +165,45 @@
       height: '390',
       width: '640',
       videoId: 'QeWBS0JBNzQ'
+  },{
+      id: 'player6',//paparazzi
+      height: '390',
+      width: '640',
+      videoId: 'd2smz_1L2_0'
+  },{
+      id: 'player7',//aura
+      height: '390',
+      width: '640',
+      videoId: 'V6qXX82I-Hs'
+  },{
+      id: 'player8',//anything goes
+      height: '390',
+      width: '640',
+      videoId: 'Fg1meK-IgOM'
+  },{
+      id: 'player9',//million reasons
+      height: '390',
+      width: '640',
+      videoId: 'en2D_5TzXCA'
+  },{
+      id: 'player10',//cure
+      height: '390',
+      width: '640',
+      videoId: 'O8VadpIgvbw'
+  },{
+      id: 'player11',//superbowl
+      height: '390',
+      width: '640',
+      videoId: 'txXwg712zw4'
+  },{
+      id: 'player12',//shallow
+      height: '390',
+      width: '640',
+      videoId: 'bo_efYhYU2A'
   }];
 
   function onYouTubeIframeAPIReady() {
+    //Get the chosenId based on the place in the timeline
       if (typeof playerInfoList === 'undefined') return;
 
       for (var i = 0; i < playerInfoList.length; i++) {
@@ -96,14 +222,12 @@
       });
   }
 
-  //getting the videos from the timeline to show up
-
-
 $(function(){
   console.log('scripts loaded');
 
-
-
+  $('.close').click(function(){
+    $('.modal').css('display', 'none');
+  });
   //Timeline
   (function() {
 

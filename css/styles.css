@@ -54,6 +54,10 @@
     flex-wrap: wrap;
   }
 
+  .hidden{
+    display: none;
+  }
+
   a{
     color: #fff;
     text-decoration: none;
@@ -348,7 +352,7 @@
     margin: 0 auto;
   }
 
-  .songshd h1, .sources h1, .movies-intro h1{
+  .songshd h1, .sources h1, .movies-intro h1, .yt-videos h2{
     margin-bottom: 0;
   }
 
@@ -510,13 +514,9 @@
     grid-area: video-icon;
   }
 
-  .videos-intro{
+  .videos-intro, .yt-videos{
     flex-direction: column;
     max-width: 90%;
-  }
-
-  .yt-videos{
-    flex-direction: column;
   }
 
   .video-players{
@@ -532,6 +532,7 @@
   }
 
   .sources h2{
+    color: #fff;
     margin-bottom: 1%;
   }
 
