@@ -368,7 +368,7 @@ $(function(){
         moviesHtml += '<h1>A Star Is Born</h1>';
         moviesHtml += '<p>The film <em>A Star Is Born</em>  tells the story of an actor down on his luck who discovers a talented woman that eventually becomes his muse. Through his guidance, she reaches stardom even as his own career wanes.</p>';
         moviesHtml += '<p>The original 1937 film starred Janet Gaynor and Fredric March. It was remade in 1954 as a musical starring Judy Garland and James Mason. In 1976, Barbara Streisand and Kris Kristofferson. The 1976 version introduced us to a singer instead of an actor but followed the same plotline.</p>';
-        moviesHtml += '<p>Bradley Cooper, in the role of director, brought Lady Gaga to star as his leading lady. Devoid of her usual blonde locks, Gaga stars as the unknown singer who is discovered by Cooper and eventually becomes a big star through his help and guidance.</p>';
+        moviesHtml += '<p>Bradley Cooper, in the role of director, brought Lady Gaga to star as his leading lady. Devoid of her usual blonde locks, Gaga stars as the unknown singer who is discovered by Cooper and eventually becomes a big star.</p>';
       moviesHtml += '</div>';
       movies.sort(function(a,b){
         return a.Year - b.Year

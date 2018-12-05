@@ -25,9 +25,10 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(7, auto);
+    grid-template-rows: repeat(8, auto);
     grid-template-areas:
       'hero hero hero hero hero'
+      'intro intro intro intro intro-icon'
       'time-icon time time time time'
       'int int int int song-icon'
       'video-icon video video video video'
@@ -82,10 +83,11 @@
   p{
     font-family: 'Open Sans', sans-serif;
     font-size: 1.3em;
+    margin-bottom: 3%;
     text-align: center;
   }
 
-  .time-icon, .news-icon, .song-icon, .movie-icon, .video-icon{
+  .intro-icon, .time-icon, .news-icon, .song-icon, .movie-icon, .video-icon{
     background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
     font-size: 5em;
@@ -96,6 +98,27 @@
     height: 760px;
     text-align: center;
     color: #fff;
+  }
+
+  .intro{
+    grid-area: intro;
+    height: auto;
+    background-color: #fad6a5;
+  }
+
+  .intro-icon{
+    grid-area: intro-icon;
+  }
+
+  .img-row{
+    justify-content: center;
+  }
+
+  .img-row img{
+    margin: 1% 1%;
+    flex-basis: 30%;
+    max-width: 30%;
+    height: auto;
   }
 
   /*timeline*/
@@ -480,12 +503,11 @@
     grid-area: movie-icon;
   }
 
-  .movies-intro{
+  .movies-intro, .intro p{
     max-width: 90%;
-    margin-bottom: 2%;
   }
 
-  .movies-intro p, .sources p{
+  .movies-intro p, .sources p, .intro p{
     text-align: left;
   }
 
@@ -593,9 +615,11 @@
   @media only screen and (max-width: 767px) {
     .site{
       grid-template-columns: 100%;
-      grid-template-rows: repeat(11, auto);
+      grid-template-rows: repeat(13, auto);
       grid-template-areas:
         'hero'
+        'intro-icon'
+        'intro'
         'time-icon'
         'time'
         'song-icon'
@@ -640,7 +664,7 @@
       text-align: left;
     }
 
-    .time-icon, .news-icon, .song-icon, .movie-icon, .video-icon{
+    .intro-icon, .time-icon, .news-icon, .song-icon, .movie-icon, .video-icon{
       padding: 7% 0;
     }
 
