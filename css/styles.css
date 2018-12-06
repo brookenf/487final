@@ -106,6 +106,10 @@
     background-color: #fad6a5;
   }
 
+  .intro a{
+    color: #660E0E;
+  }
+
   .intro-icon{
     grid-area: intro-icon;
   }
